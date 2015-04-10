@@ -470,7 +470,7 @@
 				ORGANIZATIONNAME = "Song Zheng";
 				TargetAttributes = {
 					E423F47A17BC4D48007F17DF = {
-						DevelopmentTeam = Q8LHUPHAD8;
+						DevelopmentTeam = MGD69Q275W;
 					};
 				};
 			};
@@ -711,8 +711,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "webrtcDemoiOS/OpenTokRTC-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -738,8 +736,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "webrtcDemoiOS/OpenTokRTC-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -765,8 +761,6 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "webrtcDemoiOS/webrtcDemoiOS-Prefix.pch";
 				INFOPLIST_FILE = "webrtcDemoiOSTests/OpenTokRTCTests-Info.plist";
 				PRODUCT_NAME = OpenTokRTCTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -782,8 +776,6 @@
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "webrtcDemoiOS/webrtcDemoiOS-Prefix.pch";
 				INFOPLIST_FILE = "webrtcDemoiOSTests/OpenTokRTCTests-Info.plist";
 				PRODUCT_NAME = OpenTokRTCTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
