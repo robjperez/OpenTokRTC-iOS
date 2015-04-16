@@ -7,12 +7,31 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "RoomViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    NSURL *url = launchOptions[UIApplicationLaunchOptionsURLKey];
+    ViewController *vc = (ViewController *)((UINavigationController *)self.window.rootViewController).topViewController;
+    
+    if (url != nil) {
+        vc.preloadRoomName = [url host];
+    }
+    
+    return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    UIViewController *uvc = ((UINavigationController *)self.window.rootViewController).topViewController;
+    if ([uvc isKindOfClass:[ViewController class]]) {
+        ViewController *vc = (ViewController *)uvc;
+        vc.roomNameTxtField.text = [url host];
+        [vc performSegueWithIdentifier:@"startChat" sender:vc];
+    }
     return YES;
 }
 							

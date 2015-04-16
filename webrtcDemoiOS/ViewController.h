@@ -21,4 +21,6 @@
 @property (strong, nonatomic) IBOutlet UIButton *joinButton;
 @property (strong, nonatomic) IBOutlet UILabel *creditsLbl;
 
+@property (strong, nonatomic) NSString *preloadRoomName;
+
 @end

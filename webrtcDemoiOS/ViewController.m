@@ -52,14 +52,22 @@
     if(!userInfo)
     {
         self.userNameTxtField.text = [[UIDevice currentDevice] name];
+        if ([self.preloadRoomName length] > 0) {
+            self.roomNameTxtField.text = self.preloadRoomName;
+        }
     }
     else
     {
-        self.roomNameTxtField.text = [userInfo valueForKey:OPENTOK_ROOM_NAME];
+        if ([self.preloadRoomName length] > 0) {
+            self.roomNameTxtField.text = self.preloadRoomName;
+        } else {
+            self.roomNameTxtField.text = [userInfo valueForKey:OPENTOK_ROOM_NAME];
+        }
+        
         self.userNameTxtField.text = [userInfo valueForKey:OPENTOK_USER_NAME];
     }
     
-    self.title = @"OpenTokRTC";
+    self.title = @"meet.tokbox";
     if (SYSTEM_VERSION_LESS_THAN(@"7.0"))
     {
         self.navigationController.navigationBar.tintColor =
@@ -81,11 +89,15 @@
         self.navigationController.navigationBar.translucent = NO;
     }
     
+    if ([self.preloadRoomName length] > 0) {
+        [self performSegueWithIdentifier:@"startChat" sender:self];
+    }
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    self.title = @"OpenTokRTC";
+    self.title = @"meet.tokbox";
     [self willAnimateRotationToInterfaceOrientation:
      [[UIApplication sharedApplication] statusBarOrientation] duration:1.0];
 }
