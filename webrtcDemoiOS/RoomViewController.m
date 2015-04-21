@@ -917,7 +917,7 @@ OTPublisherDelegate>{
 	_publisher = [[OTPublisher alloc] initWithDelegate:self];
     
     // set name of the publisher
-	[_publisher setName:self.publisherName];
+	//[_publisher setName:self.publisherName];
 
     [self willAnimateRotationToInterfaceOrientation:
      [[UIApplication sharedApplication] statusBarOrientation] duration:1.0];
