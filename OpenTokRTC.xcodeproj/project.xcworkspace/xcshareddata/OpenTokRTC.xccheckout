@@ -10,29 +10,29 @@
 	<string>OpenTokRTC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>0133FB67-A3F0-420A-8810-D5B72109974E</key>
-		<string>https://github.com/opentok/OpenTokRTC-iOS</string>
+		<key>976B3055D1643C3D5833DAE069DA16771F30EFAF</key>
+		<string>github.com:opentok/OpenTokRTC-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>OpenTokRTC.xcodeproj/project.xcworkspace</string>
+	<string>OpenTokRTC.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>0133FB67-A3F0-420A-8810-D5B72109974E</key>
+		<key>976B3055D1643C3D5833DAE069DA16771F30EFAF</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/opentok/OpenTokRTC-iOS</string>
+	<string>github.com:opentok/OpenTokRTC-iOS.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0133FB67-A3F0-420A-8810-D5B72109974E</string>
+	<string>976B3055D1643C3D5833DAE069DA16771F30EFAF</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>0133FB67-A3F0-420A-8810-D5B72109974E</string>
+			<string>976B3055D1643C3D5833DAE069DA16771F30EFAF</string>
 			<key>IDESourceControlWCCName</key>
 			<string>OpenTokRTC-iOS</string>
 		</dict>
