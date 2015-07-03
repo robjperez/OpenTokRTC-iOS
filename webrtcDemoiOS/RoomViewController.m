@@ -25,10 +25,6 @@ NSString *kToken = @"";
 
 #define OVERLAY_HIDE_TIME 7.0f
 
-@interface OTSession(private)
-- (void)setApiRootURL:(NSURL*)aURL;
-@end
-
 // otherwise no upside down rotation
 @interface UINavigationController (RotationAll)
 - (NSUInteger)supportedInterfaceOrientations;
@@ -157,10 +153,9 @@ OTPublisherDelegate>{
     
     self.title = self.rid;
     
-    NSString* roomInfoUrl = [[NSString alloc] initWithFormat:@"https://meet.tokbox.com/%@", self.rid];
+    NSString* roomInfoUrl = [[NSString alloc] initWithFormat:@"https://opentokrtc.com/%@.json", self.rid];
     NSURL *url = [NSURL URLWithString: roomInfoUrl];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
-    [request setValue:@"application/json" forHTTPHeaderField:@"content-type"];
     [request setHTTPMethod: @"GET"];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
@@ -171,7 +166,7 @@ OTPublisherDelegate>{
             NSDictionary *roomInfo = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
             kApiKey = [roomInfo objectForKey:@"apiKey"];
             kToken = [roomInfo objectForKey:@"token"];
-            kSessionId = [roomInfo objectForKey:@"sessionId"];
+            kSessionId = [roomInfo objectForKey:@"sid"];
             [self setupSession];
             [self.endCallButton sendActionsForControlEvents:UIControlEventTouchDown];
         }
@@ -911,10 +906,6 @@ OTPublisherDelegate>{
 	_session = [[OTSession alloc] initWithApiKey:kApiKey
 									   sessionId:kSessionId
 										delegate:self];
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"environment" ofType:@"plist"];
-    NSDictionary *envDict = [NSDictionary dictionaryWithContentsOfFile:path];
-    [_session setApiRootURL:[NSURL URLWithString:envDict[@"meet"]]];
     [_session connectWithToken:kToken error:nil];
     [self setupPublisher];
     
@@ -923,8 +914,10 @@ OTPublisherDelegate>{
 - (void)setupPublisher
 {
 	// create one time publisher and style publisher
-	_publisher = [[OTPublisher alloc] initWithDelegate:self
-                                                  name:self.publisherName];
+	_publisher = [[OTPublisher alloc] initWithDelegate:self];
+    
+    // set name of the publisher
+	//[_publisher setName:self.publisherName];
 
     [self willAnimateRotationToInterfaceOrientation:
      [[UIApplication sharedApplication] statusBarOrientation] duration:1.0];

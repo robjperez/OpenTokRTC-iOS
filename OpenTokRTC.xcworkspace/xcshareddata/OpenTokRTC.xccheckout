@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>84DF9410-C586-4F06-9EE2-EC7093E7CE82</string>
+	<string>8B1E4756-6487-4E9D-A14A-A58D3A5C8AFF</string>
 	<key>IDESourceControlProjectName</key>
 	<string>OpenTokRTC</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -14,11 +14,11 @@
 		<string>github.com:opentok/OpenTokRTC-iOS.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>OpenTokRTC.xcodeproj</string>
+	<string>OpenTokRTC.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>976B3055D1643C3D5833DAE069DA16771F30EFAF</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:opentok/OpenTokRTC-iOS.git</string>
